@@ -25,5 +25,4 @@ class Graph extends Model
 		);
 	}
 
-	public function get
 }
