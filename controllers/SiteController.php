@@ -9,6 +9,7 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Graph;
 
 class SiteController extends Controller
 {
@@ -125,4 +126,29 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
+	/**
+	     * Displays cabinet page.
+	     *
+	     * @return string
+	 */
+	public function actionCabinet()
+	{
+		$model = new Graph();
+		$model->name = 'Temp';
+		$model->value = 123;
+		if ($model->validate()) {
+		    // Good!
+		} else {
+		    // Failure!
+		    // Use $model->getErrors()
+		}
+		return $this->render('cabinet', [
+		            'model' => $model,
+		        ]);
+	}
+
+    public function actionGetData(){
+		echo 'hello, boss, can I habe tha data?';
+	}
 }

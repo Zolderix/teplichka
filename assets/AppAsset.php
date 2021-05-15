@@ -29,3 +29,33 @@ class AppAsset extends AssetBundle
         'yii\bootstrap\BootstrapAsset',
     ];
 }
+//
+//
+// /*
+//  * Файл assets/AppAsset.php
+//  */
+//
+// namespace app\assets;
+//
+// use yii\web\AssetBundle;
+// use yii\web\View;
+//
+// class AppAsset extends AssetBundle
+// {
+// 	public $basePath = '@webroot';
+// 	public $baseUrl = '@web';
+// 	public $css = [
+// 		'css/site.css',
+// 	];
+// 	public $js = [
+// 		'js/site.js'
+// 	];
+// 	public $jsOptions = [
+// 		// скрипты будут подключены в <head>
+// 		'position' => View::POS_HEAD
+// 	];
+// 	public $depends = [
+// 		'yii\web\YiiAsset',
+// 		'yii\bootstrap\BootstrapAsset',
+// 	];
+// }

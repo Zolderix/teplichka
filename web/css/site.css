@@ -113,3 +113,12 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+.buttonContainer {
+    text-align: center;
+    display: block;
+}
+
+.buttonContainer p {
+    display: inline-block;
+}
