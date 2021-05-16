@@ -137,9 +137,26 @@ class SiteController extends Controller
 	 */
 	public function actionCabinet()
 	{
-		// if (Yii::app()->request->isAjaxRequest && !empty($_POST[$this->filter_form])) {
-		//
-		// }
+		if (Yii::app()->request->isAjaxRequest && !empty($_POST['params'])) {
+			$sql1 = 'INSERT INTO 
+			incubator_sensor_values
+			 (id, sensor_id, value, user_ident_id, esp_know) 
+			 VALUES
+			 (NULL, 1, '.$_POST['params']['ikTemp'].', 1, 1)';
+			$conn->query($sql1);
+			$sql2 = 'INSERT INTO 
+			incubator_sensor_values
+			 (id, sensor_id, value, user_ident_id, esp_know) 
+			 VALUES
+			 (NULL, 2, '.$_POST['params']['groundTemp'].', 1, 1)';
+			$conn->query($sql2);
+			$sql3 = 'INSERT INTO 
+			incubator_sensor_values
+			 (id, sensor_id, value, user_ident_id, esp_know) 
+			 VALUES
+			 (NULL, 3, '.$_POST['params']['humidity'].', 1, 1)';
+			$conn->query($sql3);
+		}
 
 
 

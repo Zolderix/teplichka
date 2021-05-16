@@ -9,9 +9,15 @@ $this->title = 'Личный кабинет';
 $changeValueScript = '
 let value = this.closest("#graph-value").value;
 
-let humidity = this.closest(".graphHumidity]").constructor.name
-let groundTemp = this.closest(".graphGroundTemp]").constructor.name
-let ikTemp = this.closest(".graphIkTemp]").constructor.name
+let humidity = this.closest(".graphHumidity").closest("#graph-value").value;
+let groundTemp = this.closest(".graphGroundTemp").closest("#graph-value").value;
+let ikTemp = this.closest(".graphIkTemp").closest("#graph-value").value;
+
+this.closest(".humidity").value(humidity);
+this.closest(".groundTemp").value(groundTemp);
+this.closest(".irTemp").value(ikTemp);
+
+
 
 // Создаем экземпляр класса XMLHttpRequest
 const request = new XMLHttpRequest();
@@ -63,7 +69,7 @@ request.send(params);
 
 		<?php
 		$irTemp = '';
-		echo Html::input('text', 'Актуальное значение', $irTemp .= $data['irTemp'], ['class'=>'irTemp', 'readOnly'=>true]);
+		echo Html::input('text', 'Актуальное значение', $irTemp .= $data['irTemp'], ['class'=>'irTemp', 'id' => 'value', 'readOnly'=>true]);
 		?>
 		<?php $form = ActiveForm::begin(); ?>
 
@@ -81,7 +87,7 @@ request.send(params);
   		<div class="graphGroundTemp"></div>
 		<?php
 		$irTemp = '';
-		echo Html::input('text', 'Актуальное значение', $irTemp .= $data['groundTemp'], ['class'=>'irTemp', 'readOnly'=>true]);
+		echo Html::input('text', 'Актуальное значение', $irTemp .= $data['groundTemp'], ['class'=>'groundTemp', 'id' => 'value', 'readOnly'=>true]);
 		?>
 
 		<?php $form = ActiveForm::begin(); ?>
@@ -100,7 +106,7 @@ request.send(params);
   		<div class="graphHumidity"></div>
 		<?php
 		$irTemp = '';
-		echo Html::input('text', 'Актуальное значение', $irTemp .= $data['humidity'], ['class'=>'irTemp', 'readOnly'=>true]);
+		echo Html::input('text', 'Актуальное значение', $irTemp .= $data['humidity'], ['class'=>'humidity', 'id' => 'value', 'readOnly'=>true]);
 		?>
 		<?php $form = ActiveForm::begin(); ?>
 
