@@ -183,9 +183,9 @@ class SiteController extends Controller
 					 esp_know = 0 AND identity = "tPmAT5Ab3j7F9" AND sensor_id = 3
 					 ORDER BY sv.id DESC LIMIT 1';
 		$data = array();
-		$data['irTemp'] = $conn->mysqli_stmt_get_result($sql1);
-		$data['groundTemp'] = $conn->mysqli_stmt_get_result($sql2);
-		$data['humidity'] = $conn->mysqli_stmt_get_result($sql3);
+		$data['irTemp'] = $conn->query($sql1)->fetch_assoc()['value'];
+		$data['groundTemp'] = $conn->query($sql2)->fetch_assoc()['value'];
+		$data['humidity'] = $conn->query($sql3)->fetch_assoc()['value'];
 
 		return $this->render('cabinet', [
 		            'model' => $model,
