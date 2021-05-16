@@ -64,7 +64,7 @@ request.send(params);
 
     <div class="temperature-graph col-md-4">
       <h2>Температура ИК</h2>
-      <div class="graphIkTemp"></div>
+
 
 		<?php
 		$irTemp = '';
@@ -75,7 +75,7 @@ request.send(params);
 		    <?= $form->field($model, 'value') ?>
 
 		    <div class="form-group">
-		        <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary', 'onclick'=>$changeValueScript]) ?>
+		        <?= Html::submitButton('Отправить<div class="graphIkTemp" style="display: none"></div>', ['class' => 'btn btn-primary', 'onclick'=>$changeValueScript]) ?>
 		    </div>
 
 		<?php ActiveForm::end(); ?>
@@ -83,7 +83,7 @@ request.send(params);
 
     <div class="humidity-graph col-md-4">
 		<h2>Температура земли</h2>
-  		<div class="graphGroundTemp"></div>
+
 		<?php
 		$irTemp = '';
 		echo Html::input('text', 'Актуальное значение', $irTemp .= $data['groundTemp'], ['class'=>'groundTemp', 'id' => 'value', 'readOnly'=>true]);
@@ -94,7 +94,7 @@ request.send(params);
 		<?= $form->field($model, 'value') ?>
 
 		    <div class="form-group">
-		        <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary', 'onclick'=>$changeValueScript]) ?>
+		        <?= Html::submitButton('Отправить<div class="graphGroundTemp" style="display: none"></div>', ['class' => 'btn btn-primary', 'onclick'=>$changeValueScript]) ?>
 		    </div>
 
 		<?php ActiveForm::end(); ?>
@@ -102,7 +102,6 @@ request.send(params);
 
     <div class="airing-graph col-md-4">
 		<h2>Влажность</h2>
-  		<div class="graphHumidity"></div>
 		<?php
 		$irTemp = '';
 		echo Html::input('text', 'Актуальное значение', $irTemp .= $data['humidity'], ['class'=>'humidity', 'id' => 'value', 'readOnly'=>true]);
@@ -112,7 +111,7 @@ request.send(params);
 		<?= $form->field($model, 'value') ?>
 
 		    <div class="form-group">
-		        <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary', 'onclick'=>$changeValueScript]) ?>
+		        <?= Html::submitButton('Отправить<div class="graphHumidity" style="display: none"></div>', ['class' => 'btn btn-primary', 'onclick'=>$changeValueScript]) ?>
 		    </div>
 
 		<?php ActiveForm::end(); ?>
