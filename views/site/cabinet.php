@@ -26,7 +26,7 @@ $this->title = 'Личный кабинет';
       <div class="graphTemp"></div>
 		<?php $form = ActiveForm::begin(); ?>
 
-		    <?= $form->field($model, 'value') ?>
+		    <?= $form->field($data['irTemp'], 'value') ?>
 		<?= var_dump($data['irTemp'])?>
 
 		    <div class="form-group">
