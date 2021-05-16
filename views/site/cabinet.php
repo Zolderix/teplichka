@@ -7,7 +7,6 @@ use yii\widgets\ActiveForm;
 
 $this->title = 'Личный кабинет';
 $changeValueScript = '
-let value = this.closest("#graph-value").value;
 
 let humidity = elem.getElementsByClassName(".graphHumidity").closest("#graph-value").value;
 let groundTemp = elem.getElementsByClassName(".graphGroundTemp").closest("#graph-value").value;
