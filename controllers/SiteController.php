@@ -162,7 +162,7 @@ class SiteController extends Controller
 					 JOIN teplichka.user u ON u.id = ui.user_id
 					 JOIN teplichka.sensors_names sn ON sn.id = sv.sensor_id
 					 WHERE
-					 AND identity = "tPmAT5Ab3j7F9" AND sensor_id = 1
+					 identity = "tPmAT5Ab3j7F9" AND sensor_id = 1
 					 ORDER BY sv.id DESC LIMIT 1';
 		$sql2 = 'SELECT
 						value
