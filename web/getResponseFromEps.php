@@ -66,11 +66,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
 		$user_ident = 1;//"tPmAT5Ab3j7F9";
 // $sql = "INSERT INTO datafromsensors(irTempSensor, groundTempSensor, humidity) VALUES (".$irTempSensor.",".$groundTempSensor.",".$humidity.")";
-$sql = 	'INSERT INTO incubator_sensor_values (id, sensor_id, value, user_ident_id, esp_know) VALUES (NULL, 1, '.$irTempSensor.', '.$user_ident.', 1);'
-		// .' INSERT INTO incubator_sensor_values (id, sensor_id, value, user_ident_id, esp_know) VALUES (NULL, 2, '.$groundTempSensor.', '.$user_ident.', 1);'
-    	// .' INSERT INTO incubator_sensor_values (id, sensor_id, value, user_ident_id, esp_know) VALUES (NULL, 3, '.$humidity.', '.$user_ident.', 1);'
-;
-if ($conn->query($sql) === TRUE) {
+$sql1 = 	'INSERT INTO incubator_sensor_values (id, sensor_id, value, user_ident_id, esp_know) VALUES (NULL, 1, '.$irTempSensor.', '.$user_ident.', 1);';
+$sql2 = ' INSERT INTO incubator_sensor_values (id, sensor_id, value, user_ident_id, esp_know) VALUES (NULL, 2, '.$groundTempSensor.', '.$user_ident.', 1);';
+$sql3 = ' INSERT INTO incubator_sensor_values (id, sensor_id, value, user_ident_id, esp_know) VALUES (NULL, 3, '.$humidity.', '.$user_ident.', 1);';
+
+if ($conn->query($sql1) === TRUE && $conn->query($sql2) === TRUE && $conn->query($sql3) === TRUE) {
             echo "New record created successfully";
         }
         else {
