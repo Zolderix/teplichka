@@ -166,10 +166,7 @@ class SiteController extends Controller
 
 			die;
 
-		}else{
-      		$test = "Ajax failed";
-      		die;
-  		}
+		}
 
 
 
