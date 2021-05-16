@@ -46,16 +46,16 @@ class SensorsData {
 }
 
 
-// $user_ident = "tPmAT5Ab3j7F9";
-//
-// $get_ident= $sensor = $location = $value1 = $value2 = $value3 = "";
-//
-// if ($_SERVER["REQUEST_METHOD"] == "GET") {
-//     $get_ident = test_input($_GET["api_key"]);
-//     if($get_ident == $user_ident) {
-//         $irTempSensor = test_input($_GET["irTempSensor"]);
-//         $groundTempSensor = test_input($_GET["groundTempSensor"]);
-//         $humidity = test_input($_GET["humidity"]);
+$user_ident = "tPmAT5Ab3j7F9";
+
+$get_ident= $sensor = $location = $value1 = $value2 = $value3 = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    $get_ident = test_input($_GET["api_key"]);
+    if($get_ident == $user_ident) {
+        $irTempSensor = test_input($_GET["irTempSensor"]);
+        $groundTempSensor = test_input($_GET["groundTempSensor"]);
+        $humidity = test_input($_GET["humidity"]);
 
         // Create connection
         $conn = new mysqli('localhost', 'zolderix', '13213', 'teplichka');
@@ -65,7 +65,10 @@ class SensorsData {
         }
 
 // $sql = "INSERT INTO datafromsensors(irTempSensor, groundTempSensor, humidity) VALUES (".$irTempSensor.",".$groundTempSensor.",".$humidity.")";
-$sql = 'INSERT INTO incubator_sensor_values (id, sensor_id, value, user_ident_id, esp_know) VALUES (NULL, 3, 12.8, 1, 1);';
+$sql = 	'INSERT INTO incubator_sensor_values (id, sensor_id, value, user_ident_id, esp_know) VALUES (NULL, 1, '.$irTempSensor.', '.$user_ident.', 1);'
+		.'INSERT INTO incubator_sensor_values (id, sensor_id, value, user_ident_id, esp_know) VALUES (NULL, 2, '.$groundTempSensor.', '.$user_ident.', 1);'
+    	.'INSERT INTO incubator_sensor_values (id, sensor_id, value, user_ident_id, esp_know) VALUES (NULL, 3, '.$humidity.', '.$user_ident.', 1);'
+;
 if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
         }
