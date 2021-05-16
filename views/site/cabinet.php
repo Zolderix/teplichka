@@ -26,8 +26,7 @@ $this->title = 'Личный кабинет';
       <div class="graphTemp"></div>
 		<?php $form = ActiveForm::begin(); ?>
 
-		    <?= $form->field($model, 'value') ?>
-		<?= var_dump($data)?>
+		    <?= $form->field($data['irTemp'], 'value') ?>
 
 		    <div class="form-group">
 		        <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
@@ -41,7 +40,7 @@ $this->title = 'Личный кабинет';
   		<div class="graphHumidity"></div>
 		<?php $form = ActiveForm::begin(); ?>
 
-		<?= $form->field($model, 'value') ?>
+		<?= $form->field($data['groundTemp'], 'value') ?>
 
 		    <div class="form-group">
 		        <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
@@ -55,7 +54,7 @@ $this->title = 'Личный кабинет';
   		<div class="graphAiring"></div>
 		<?php $form = ActiveForm::begin(); ?>
 
-		<?= $form->field($model, 'value') ?>
+		<?= $form->field($data['humidity'], 'value') ?>
 
 		    <div class="form-group">
 		        <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
