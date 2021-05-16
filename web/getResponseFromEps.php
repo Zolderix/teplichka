@@ -62,24 +62,22 @@ class SensorsData {
         // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
-        } else {
-        	echo 'okay';
-		}
-//
+        }
+
 // $sql = "INSERT INTO datafromsensors(irTempSensor, groundTempSensor, humidity) VALUES (".$irTempSensor.",".$groundTempSensor.",".$humidity.")";
-//
-// if ($conn->query($sql) === TRUE) {
-//             echo "New record created successfully";
-//         }
-//         else {
-//             echo "Error: " . $sql . "<br>" . $conn->error;
-//         }
-//
-//         $conn->close();
-//     }
-//     else {
-//         echo "Wrong API Key provided.";
-//     }
+$sql = 'INSERT INTO incubator_sensor_values (id, sensor_id, value, user_ident_id, esp_know) VALUES (NULL, 3, 12.8, 1, 1);';
+if ($conn->query($sql) === TRUE) {
+            echo "New record created successfully";
+        }
+        else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+
+        $conn->close();
+    }
+    // else {
+    //     echo "Wrong API Key provided.";
+    // }
 //
 // }
 // else {
