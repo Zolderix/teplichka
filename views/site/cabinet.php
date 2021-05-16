@@ -26,8 +26,8 @@ $this->title = 'Личный кабинет';
       <div class="graphTemp"></div>
 		<?php $form = ActiveForm::begin(); ?>
 
-		    <?= $form->field($data['irTemp'], 'value') ?>
-		<?= var_dump($data['irTemp'])?>
+		    <?= $form->field($model, 'value') ?>
+		<?= Html::input('text', 'Актуальное значение', $irTemp .= $data['irTemp'], ['class'=>'irTemp', 'readOnly'])?>
 
 		    <div class="form-group">
 		        <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
