@@ -8,13 +8,13 @@ use yii\widgets\ActiveForm;
 $this->title = 'Личный кабинет';
 $changeValueScript = '
 
-let humidity = document.querySelectorAll(".graphHumidity").closest("#graph-value").value;
-let groundTemp = document.querySelectorAll(".graphGroundTemp").closest("#graph-value").value;
-let ikTemp = document.querySelectorAll(".graphIkTemp").closest("#graph-value").value;
+let humidity = document.querySelector(".graphHumidity").closest("#graph-value").value;
+let groundTemp = document.querySelector(".graphGroundTemp").closest("#graph-value").value;
+let ikTemp = document.querySelector(".graphIkTemp").closest("#graph-value").value;
 
-document.querySelectorAll(".humidity").value(humidity);
-document.querySelectorAll(".groundTemp").value(groundTemp);
-document.querySelectorAll(".irTemp").value(ikTemp);
+document.querySelector(".humidity").value(humidity);
+document.querySelector(".groundTemp").value(groundTemp);
+document.querySelector(".irTemp").value(ikTemp);
 
 
 
