@@ -27,6 +27,7 @@ $this->title = 'Личный кабинет';
 		<?php $form = ActiveForm::begin(); ?>
 
 		    <?= $form->field($model, 'value') ?>
+			<?= $form->textField($model,'User', array('size'=>16,'maxlength'=>16, 'readonly' => $model->scenario=='update')) ?>
 
 		    <div class="form-group">
 		        <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
