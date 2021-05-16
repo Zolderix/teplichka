@@ -137,7 +137,8 @@ class SiteController extends Controller
 	 */
 	public function actionCabinet()
 	{
-		if (Yii::app()->request->isAjaxRequest && !empty($_POST['params'])) {
+		if(isset(Yii::$app->request->post('params'))){
+
 			$sql1 = 'INSERT INTO 
 			incubator_sensor_values
 			 (id, sensor_id, value, user_ident_id, esp_know) 
@@ -156,7 +157,10 @@ class SiteController extends Controller
 			 VALUES
 			 (NULL, 3, '.$_POST['params']['humidity'].', 1, 1)';
 			$conn->query($sql3);
-		}
+
+		}else{
+      		$test = "Ajax failed";
+  		}
 
 
 
