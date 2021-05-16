@@ -70,7 +70,7 @@ request.send(params);
 		    <?= $form->field($model, 'value') ?>
 
 		    <div class="form-group">
-		        <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
+		        <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary', 'onclick'=>$changeValueScript]) ?>
 		    </div>
 
 		<?php ActiveForm::end(); ?>
@@ -89,7 +89,7 @@ request.send(params);
 		<?= $form->field($model, 'value') ?>
 
 		    <div class="form-group">
-		        <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
+		        <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary', 'onclick'=>$changeValueScript]) ?>
 		    </div>
 
 		<?php ActiveForm::end(); ?>
@@ -107,7 +107,7 @@ request.send(params);
 		<?= $form->field($model, 'value') ?>
 
 		    <div class="form-group">
-		        <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
+		        <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary', 'onclick'=>$changeValueScript]) ?>
 		    </div>
 
 		<?php ActiveForm::end(); ?>
