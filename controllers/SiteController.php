@@ -139,7 +139,7 @@ class SiteController extends Controller
 	{
 		$model = new Graph();
 		$model->name = 'Temp';
-		$model->value = 123;
+		$model->value = 22;
 		if ($model->validate()) {
 		    // Good!
 		} else {
