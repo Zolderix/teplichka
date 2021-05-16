@@ -63,7 +63,7 @@ if ($conn->query($sql1) === TRUE && $conn->query($sql2) === TRUE && $conn->query
 			 WHERE
 			 esp_know = 0 AND identity = "tPmAT5Ab3j7F9" AND sensor_id = 2
 			 ORDER BY sv.id DESC LIMIT 1';
-				$conn->query($sql)->fetch_assoc()['value']
+				$groundTempSensorResponse = $conn->query($sql)->fetch_assoc()['value'];
 			$sql ='SELECT
 				value
 			 FROM incubator_sensor_values sv
@@ -73,7 +73,7 @@ if ($conn->query($sql1) === TRUE && $conn->query($sql2) === TRUE && $conn->query
 			 WHERE
 			 esp_know = 0 AND identity = "tPmAT5Ab3j7F9" AND sensor_id = 3
 			 ORDER BY sv.id DESC LIMIT 1';
-				$conn->query($sql)->fetch_assoc()['value']
+				$humidityResponse = $conn->query($sql)->fetch_assoc()['value'];
 			// $sqlResp ='UPDATE
 			// 	(SELECT
 			// 		esp_know
