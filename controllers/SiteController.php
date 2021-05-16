@@ -162,7 +162,7 @@ class SiteController extends Controller
 					 JOIN teplichka.user u ON u.id = ui.user_id
 					 JOIN teplichka.sensors_names sn ON sn.id = sv.sensor_id
 					 WHERE
-					 esp_know = 0 AND identity = "tPmAT5Ab3j7F9" AND sensor_id = 1
+					 AND identity = "tPmAT5Ab3j7F9" AND sensor_id = 1
 					 ORDER BY sv.id DESC LIMIT 1';
 		$sql2 = 'SELECT
 						value
@@ -171,7 +171,7 @@ class SiteController extends Controller
 					 JOIN teplichka.user u ON u.id = ui.user_id
 					 JOIN teplichka.sensors_names sn ON sn.id = sv.sensor_id
 					 WHERE
-					 esp_know = 0 AND identity = "tPmAT5Ab3j7F9" AND sensor_id = 2
+					 identity = "tPmAT5Ab3j7F9" AND sensor_id = 2
 					 ORDER BY sv.id DESC LIMIT 1';
 		$sql3 = 'SELECT
 						value
@@ -180,7 +180,7 @@ class SiteController extends Controller
 					 JOIN teplichka.user u ON u.id = ui.user_id
 					 JOIN teplichka.sensors_names sn ON sn.id = sv.sensor_id
 					 WHERE
-					 esp_know = 0 AND identity = "tPmAT5Ab3j7F9" AND sensor_id = 3
+					 identity = "tPmAT5Ab3j7F9" AND sensor_id = 3
 					 ORDER BY sv.id DESC LIMIT 1';
 		$data = array();
 		$data['irTemp'] = $conn->query($sql1)->fetch_assoc()['value'];
