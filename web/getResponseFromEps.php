@@ -77,19 +77,12 @@ if ($conn->query($sql) === TRUE) {
         }
 
         $conn->close();
-    // }
-    // else {
-    //     echo "Wrong API Key provided.";
-    // }
-//
-// }
-// else {
-//     echo "No data posted with HTTP POST.";
-// }
-//
-// function test_input($data) {
-//     $data = trim($data);
-//     $data = stripslashes($data);
-//     $data = htmlspecialchars($data);
-//     return $data;
-// }
+    }
+    else {
+        echo "Wrong API Key provided.";
+    }
+
+}
+else {
+    echo "No data posted with HTTP POST.";
+}
