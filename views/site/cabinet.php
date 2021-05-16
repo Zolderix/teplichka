@@ -22,7 +22,7 @@ $this->title = 'Личный кабинет';
 <div class="graphs row graphContainer">
 
     <div class="temperature-graph col-md-4">
-      <h2>Температура</h2>
+      <h2>Температура ИК</h2>
       <div class="graphTemp"></div>
 
 		<?php
@@ -41,7 +41,7 @@ $this->title = 'Личный кабинет';
     </div>
 
     <div class="humidity-graph col-md-4">
-		<h2>Влажность</h2>
+		<h2>Температура земли</h2>
   		<div class="graphHumidity"></div>
 		<?php
 		$irTemp = '';
@@ -60,7 +60,7 @@ $this->title = 'Личный кабинет';
     </div>
 
     <div class="airing-graph col-md-4">
-		<h2>Проветриваемость</h2>
+		<h2>Влажность</h2>
   		<div class="graphAiring"></div>
 		<?php
 		$irTemp = '';
