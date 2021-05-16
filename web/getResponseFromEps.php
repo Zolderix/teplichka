@@ -74,7 +74,7 @@ if ($conn->query($sql) === TRUE) {
         }
 
         $conn->close();
-    }
+    // }
     // else {
     //     echo "Wrong API Key provided.";
     // }
