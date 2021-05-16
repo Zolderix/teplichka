@@ -1,6 +1,7 @@
 <?php
 namespace app\models;
 
+use mysqli;
 
 class SensorsData {
 
@@ -57,7 +58,7 @@ class SensorsData {
 //         $humidity = test_input($_GET["humidity"]);
 
         // Create connection
-        $conn = new mysqli('localhost', 'root', 'hack22teplo', 'teplichka');
+        $conn = new mysqli('localhost', 'zolderix', '13213', 'teplichka');
         // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
