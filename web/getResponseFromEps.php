@@ -3,11 +3,6 @@ namespace app\models;
 
 use mysqli;
 
-class SensorsData {
-
-	public function execute($query) {
-		return Yii::app()->db->createCommand()->queryAll();
-	}
 
 
 // 'SELECT'
@@ -23,27 +18,22 @@ class SensorsData {
 
 
 
-	public function getSensorsData() {
-	        return
-				' SELECT'
-				.' sensor_id'
-				.' value'
-				.' esp_know'
-				.' sensor_name'
-				.' identity'
-				.' FROM incubator_sensor_values sv'
-				.' JOIN teplichka.user_identities ui ON sv.user_ident_id = ui.user_id'
-				.' JOIN teplichka.user u ON u.id = ui.user_id'
-				.' JOIN teplichka.sensors_names sn ON sn.id = sv.sensor_id'
-				.' WHERE'
-				.' esp_know = 0';
-	}
-
-
-
-
-
+public function getSensorsData() {
+		return
+			' SELECT'
+			.' sensor_id'
+			.' value'
+			.' esp_know'
+			.' sensor_name'
+			.' identity'
+			.' FROM incubator_sensor_values sv'
+			.' JOIN teplichka.user_identities ui ON sv.user_ident_id = ui.user_id'
+			.' JOIN teplichka.user u ON u.id = ui.user_id'
+			.' JOIN teplichka.sensors_names sn ON sn.id = sv.sensor_id'
+			.' WHERE'
+			.' esp_know = 0 AND ';
 }
+
 
 
 $user_ident = "tPmAT5Ab3j7F9";
@@ -71,7 +61,38 @@ $sql2 = ' INSERT INTO incubator_sensor_values (id, sensor_id, value, user_ident_
 $sql3 = ' INSERT INTO incubator_sensor_values (id, sensor_id, value, user_ident_id, esp_know) VALUES (NULL, 3, '.$humidity.', '.$user_ident.', 1);';
 
 if ($conn->query($sql1) === TRUE && $conn->query($sql2) === TRUE && $conn->query($sql3) === TRUE) {
-            echo "New record created successfully";
+            //echo "New record created successfully";
+			$sql = 'SELECT
+				value
+			 FROM incubator_sensor_values sv
+			 JOIN teplichka.user_identities ui ON sv.user_ident_id = ui.user_id
+			 JOIN teplichka.user u ON u.id = ui.user_id
+			 JOIN teplichka.sensors_names sn ON sn.id = sv.sensor_id
+			 WHERE
+			 esp_know = 0 AND identity = "tPmAT5Ab3j7F9" AND sensor_id = 1
+			 ORDER BY sv.id DESC LIMIT 1';
+				$irTempSensorResponse = $conn->query($sql);
+			$sql = 'SELECT
+				value
+			 FROM incubator_sensor_values sv
+			 JOIN teplichka.user_identities ui ON sv.user_ident_id = ui.user_id
+			 JOIN teplichka.user u ON u.id = ui.user_id
+			 JOIN teplichka.sensors_names sn ON sn.id = sv.sensor_id
+			 WHERE
+			 esp_know = 0 AND identity = "tPmAT5Ab3j7F9" AND sensor_id = 2
+			 ORDER BY sv.id DESC LIMIT 1';
+				$groundTempSensorResponse = $conn->query($sql);
+			$sql ='SELECT
+				value
+			 FROM incubator_sensor_values sv
+			 JOIN teplichka.user_identities ui ON sv.user_ident_id = ui.user_id
+			 JOIN teplichka.user u ON u.id = ui.user_id
+			 JOIN teplichka.sensors_names sn ON sn.id = sv.sensor_id
+			 WHERE
+			 esp_know = 0 AND identity = "tPmAT5Ab3j7F9" AND sensor_id = 3
+			 ORDER BY sv.id DESC LIMIT 1';
+				$humidityResponse = $conn->query($sql);
+			echo $irTempSensorResponse.",".$groundTempSensorResponse.",".$humidityResponse;
         }
         else {
             echo "Error: " . $sql . "<br>" . $conn->error;
