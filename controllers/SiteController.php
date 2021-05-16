@@ -137,6 +137,12 @@ class SiteController extends Controller
 	 */
 	public function actionCabinet()
 	{
+		// Create connection
+		$conn = new mysqli('localhost', 'zolderix', '13213', 'teplichka');
+		// Check connection
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		}
 		if(null!==Yii::$app->request->post('params')){
 
 			$sql1 = 'INSERT INTO 
@@ -175,12 +181,6 @@ class SiteController extends Controller
 		} else {
 		    // Failure!
 		    // Use $model->getErrors()
-		}
-		// Create connection
-		$conn = new mysqli('localhost', 'zolderix', '13213', 'teplichka');
-		// Check connection
-		if ($conn->connect_error) {
-			die("Connection failed: " . $conn->connect_error);
 		}
 
 		$user_ident = 1;//"tPmAT5Ab3j7F9";
