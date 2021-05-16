@@ -27,7 +27,10 @@ $this->title = 'Личный кабинет';
 		<?php $form = ActiveForm::begin(); ?>
 
 		    <?= $form->field($model, 'value') ?>
-		<?= Html::input('text', 'Актуальное значение', $irTemp .= $data['irTemp'], ['class'=>'irTemp', 'readOnly'])?>
+		<?php
+		$irTemp = '';
+		echo Html::input('text', 'Актуальное значение', $irTemp .= $data['irTemp'], ['class'=>'irTemp', 'readOnly']);
+		?>
 
 		    <div class="form-group">
 		        <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
