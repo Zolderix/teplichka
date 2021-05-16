@@ -24,14 +24,14 @@ $this->title = 'Личный кабинет';
     <div class="temperature-graph col-md-4">
       <h2>Температура</h2>
       <div class="graphTemp"></div>
+
+		<?php
+		$irTemp = '';
+		echo Html::input('text', 'Актуальное значение', $irTemp .= $data['irTemp'], ['class'=>'irTemp', 'readOnly'=>true]);
+		?>
 		<?php $form = ActiveForm::begin(); ?>
 
 		    <?= $form->field($model, 'value') ?>
-		<?php
-		$irTemp = '';
-		echo $form->field($irTemp .= $data['irTemp'], 'Значение')->textInput(['readonly' => true]) ?>
-<!--		echo Html::input('text', 'Актуальное значение', $irTemp .= $data['irTemp'], ['class'=>'irTemp', 'readOnly']);-->
-<!--		?>-->
 
 		    <div class="form-group">
 		        <?= Html::submitButton('Отправить', ['class' => 'btn btn-primary']) ?>
@@ -43,6 +43,11 @@ $this->title = 'Личный кабинет';
     <div class="humidity-graph col-md-4">
 		<h2>Влажность</h2>
   		<div class="graphHumidity"></div>
+		<?php
+		$irTemp = '';
+		echo Html::input('text', 'Актуальное значение', $irTemp .= $data['groundTemp'], ['class'=>'irTemp', 'readOnly'=>true]);
+		?>
+
 		<?php $form = ActiveForm::begin(); ?>
 
 		<?= $form->field($model, 'value') ?>
@@ -57,6 +62,10 @@ $this->title = 'Личный кабинет';
     <div class="airing-graph col-md-4">
 		<h2>Проветриваемость</h2>
   		<div class="graphAiring"></div>
+		<?php
+		$irTemp = '';
+		echo Html::input('text', 'Актуальное значение', $irTemp .= $data['humidity'], ['class'=>'irTemp', 'readOnly'=>true]);
+		?>
 		<?php $form = ActiveForm::begin(); ?>
 
 		<?= $form->field($model, 'value') ?>
