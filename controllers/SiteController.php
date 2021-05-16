@@ -137,6 +137,12 @@ class SiteController extends Controller
 	 */
 	public function actionCabinet()
 	{
+		// if (Yii::app()->request->isAjaxRequest && !empty($_POST[$this->filter_form])) {
+		//
+		// }
+
+
+
 		$model = new Graph();
 		$model->name = 'Temp';
 		$model->value = 22;
