@@ -158,8 +158,11 @@ class SiteController extends Controller
 			 (NULL, 3, '.$_POST['params']['humidity'].', 1, 1)';
 			$conn->query($sql3);
 
+			die;
+
 		}else{
       		$test = "Ajax failed";
+      		die;
   		}
 
 
