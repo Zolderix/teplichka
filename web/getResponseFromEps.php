@@ -18,24 +18,6 @@ use mysqli;
 
 
 
-public function getSensorsData() {
-		return
-			' SELECT'
-			.' sensor_id'
-			.' value'
-			.' esp_know'
-			.' sensor_name'
-			.' identity'
-			.' FROM incubator_sensor_values sv'
-			.' JOIN teplichka.user_identities ui ON sv.user_ident_id = ui.user_id'
-			.' JOIN teplichka.user u ON u.id = ui.user_id'
-			.' JOIN teplichka.sensors_names sn ON sn.id = sv.sensor_id'
-			.' WHERE'
-			.' esp_know = 0 AND ';
-}
-
-
-
 $user_ident = "tPmAT5Ab3j7F9";
 
 $get_ident= $sensor = $location = $value1 = $value2 = $value3 = "";
