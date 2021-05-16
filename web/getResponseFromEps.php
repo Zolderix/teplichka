@@ -86,3 +86,10 @@ if ($conn->query($sql) === TRUE) {
 else {
     echo "No data posted with HTTP POST.";
 }
+
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
