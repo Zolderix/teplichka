@@ -9,13 +9,13 @@ $this->title = 'Личный кабинет';
 $changeValueScript = '
 let value = this.closest("#graph-value").value;
 
-let humidity = this.closest(".graphHumidity").closest("#graph-value").value;
-let groundTemp = this.closest(".graphGroundTemp").closest("#graph-value").value;
-let ikTemp = this.closest(".graphIkTemp").closest("#graph-value").value;
+let humidity = elem.getElementsByClassName(".graphHumidity").closest("#graph-value").value;
+let groundTemp = elem.getElementsByClassName(".graphGroundTemp").closest("#graph-value").value;
+let ikTemp = elem.getElementsByClassName(".graphIkTemp").closest("#graph-value").value;
 
-this.closest(".humidity").value(humidity);
-this.closest(".groundTemp").value(groundTemp);
-this.closest(".irTemp").value(ikTemp);
+elem.getElementsByClassName(".humidity").value(humidity);
+elem.getElementsByClassName(".groundTemp").value(groundTemp);
+elem.getElementsByClassName(".irTemp").value(ikTemp);
 
 
 

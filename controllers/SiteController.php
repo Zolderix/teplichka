@@ -163,9 +163,6 @@ class SiteController extends Controller
 			 VALUES
 			 (NULL, 3, '.$_POST['params']['humidity'].', 1, 1)';
 			$conn->query($sql3);
-
-			die;
-
 		}
 
 
