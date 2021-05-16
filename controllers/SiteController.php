@@ -137,7 +137,7 @@ class SiteController extends Controller
 	 */
 	public function actionCabinet()
 	{
-		if(isset(Yii::$app->request->post('params'))){
+		if(null!==Yii::$app->request->post('params')){
 
 			$sql1 = 'INSERT INTO 
 			incubator_sensor_values
